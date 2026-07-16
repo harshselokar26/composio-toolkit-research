@@ -4,7 +4,8 @@ from openai import OpenAI
 
 from config import GROQ_API_KEY
 from models import AppResearch
-from prompts import SYSTEM_PROMPT, USER_PROMPT
+from prompts import DESCRIPTION_SYSTEM_PROMPT, SYSTEM_PROMPT, USER_PROMPT
+from utils import estimate_api_scope
 
 client = OpenAI(
     api_key=GROQ_API_KEY,
@@ -12,6 +13,40 @@ client = OpenAI(
 )
 
 GROQ_MODEL = "llama-3.1-8b-instant"
+
+
+def describe_app(name, category, website, markdown):
+    prompt = f"""
+{name}
+
+Category: {category}
+Website: {website}
+
+Documentation:
+{markdown[:5000]}
+
+Write one sentence explaining what this software product does.
+Do not describe the API.
+Maximum 20 words.
+"""
+
+    response = client.chat.completions.create(
+        model=GROQ_MODEL,
+        messages=[
+            {
+                "role": "system",
+                "content": DESCRIPTION_SYSTEM_PROMPT
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        temperature=0,
+    )
+
+    description = response.choices[0].message.content.strip()
+    return " ".join(description.split())[:200]
 
 
 def extract_research(name, website, category, markdown):
@@ -58,6 +93,14 @@ Do not change the Known Category.
 
     output = response.choices[0].message.content
     data = json.loads(output)
+
+    if not data.get("description") or data.get("description") in {"", "Unknown", f"{name} API", f"{name} API documentation"}:
+        data["description"] = describe_app(name, category, website, markdown)
+
+    if not data.get("api_scope") or data.get("api_scope") in {"", "Unknown"}:
+        fallback_scope = estimate_api_scope(markdown)
+        if fallback_scope != "Unknown":
+            data["api_scope"] = fallback_scope
 
     required_fields = [
         "description",

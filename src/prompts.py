@@ -16,6 +16,16 @@ No markdown.
 No explanation.
 """
 
+DESCRIPTION_SYSTEM_PROMPT = """
+You are a Product Description Specialist.
+
+Write one sentence describing what this software product does.
+Do not describe the API.
+Do not mention implementation details.
+Maximum 20 words.
+Use plain text only.
+"""
+
 USER_PROMPT = """
 You are extracting structured information about a software product from official developer documentation.
 
@@ -31,6 +41,7 @@ IMPORTANT RULES
 - For MCP support, use "Yes" only if the docs explicitly mention an official MCP server or MCP support.
 - Do not infer MCP support from general API availability.
 - For credential requirements, use the exact documented requirement and do not over-generalize across products.
+- Determine api_scope only from explicit documentation evidence such as endpoint counts, reference surface, or product family breadth. If the documentation does not provide this information, return "Unknown".
 
 Known Category:
 {category}
@@ -81,6 +92,10 @@ Personal access token
 Unknown
 
 credential_requirement:
+Secret API Key
+Internal Integration Token
+Programmatic API Key
+Service Account Key
 Developer account + Connected App + OAuth
 API key
 API token

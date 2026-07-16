@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from pathlib import Path
 
 import pandas as pd
@@ -7,6 +8,8 @@ import pandas as pd
 CSV_FILE = Path(__file__).resolve().parents[1] / "data" / "research_results.csv"
 JSON_FILE = Path(__file__).resolve().parents[1] / "data" / "research_results.json"
 LOG_FILE = Path(__file__).resolve().parents[1] / "logs.txt"
+
+ENDPOINT_PATTERN = re.compile(r"\b(?:GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS)\s+/[^\s]*", re.IGNORECASE)
 
 
 def _normalize_result(result):
@@ -17,6 +20,32 @@ def _normalize_result(result):
         return result.model_dump()
 
     return result
+
+
+def estimate_api_scope(markdown: str) -> str:
+    if not isinstance(markdown, str) or not markdown.strip():
+        return "Unknown"
+
+    endpoints = ENDPOINT_PATTERN.findall(markdown)
+    count = len(endpoints)
+
+    explicit_match = re.search(r"(\d{1,4})\s+(?:endpoints|operations|routes|API methods)", markdown, re.IGNORECASE)
+    if explicit_match:
+        try:
+            count = max(count, int(explicit_match.group(1)))
+        except ValueError:
+            pass
+
+    if count >= 500:
+        return "Very Large"
+    if count >= 200:
+        return "Large"
+    if count >= 50:
+        return "Medium"
+    if count >= 1:
+        return "Small"
+
+    return "Unknown"
 
 
 def save_result(result):

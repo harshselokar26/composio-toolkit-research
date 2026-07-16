@@ -4,7 +4,7 @@ from llm import GROQ_MODEL, client
 
 ALLOWED_VALUES = {
     "self_serve": {"Self Serve", "Paid Plan", "Enterprise", "Partner Required", "Admin Approval", "Unknown"},
-    "credential_requirement": {"Developer account + Connected App + OAuth", "API key", "API token", "OAuth credentials", "Access token", "Personal access token", "Unknown"},
+    "credential_requirement": {"Secret API Key", "Internal Integration Token", "Programmatic API Key", "Service Account Key", "Developer account + Connected App + OAuth", "API key", "API token", "OAuth credentials", "Access token", "Personal access token", "Unknown"},
     "api_type": {"REST", "GraphQL", "SOAP", "SDK", "Unknown"},
     "api_scope": {"Small", "Medium", "Large", "Very Large", "Unknown"},
     "mcp_support": {"Yes", "No", "Unknown"},
@@ -51,18 +51,21 @@ def _normalize_value(field_name, value):
             return "Small"
 
     if field_name == "credential_requirement":
+        if not text or lower_text in {"unknown", "n/a", "na"}:
+            return "Unknown"
         if "developer account" in lower_text and "oauth" in lower_text:
             return "Developer account + Connected App + OAuth"
         if "personal access token" in lower_text:
             return "Personal access token"
-        if "access token" in lower_text:
-            return "Access token"
-        if "api token" in lower_text:
-            return "API token"
-        if "oauth" in lower_text:
-            return "OAuth credentials"
-        if "api key" in lower_text:
-            return "API key"
+        if "internal integration token" in lower_text:
+            return "Internal Integration Token"
+        if "programmatic api" in lower_text or "programmatic key" in lower_text:
+            return "Programmatic API Key"
+        if "secret api key" in lower_text or "secret key" in lower_text:
+            return "Secret API Key"
+        if "service account" in lower_text:
+            return "Service Account Key"
+        return text
 
     if field_name == "auth_method":
         if "oauth" in lower_text:
@@ -101,7 +104,7 @@ def _sanitize_research(extracted_json, category):
     return corrected
 
 
-def _collect_issues(extracted_json, category):
+def _collect_issues(extracted_json, category, markdown):
     issues = []
 
     if extracted_json.get("category") != category:
@@ -124,7 +127,7 @@ def _collect_issues(extracted_json, category):
 
 def verify_research(name, category, markdown, extracted_json):
     corrected = _sanitize_research(extracted_json, category)
-    issues = _collect_issues(extracted_json, category)
+    issues = _collect_issues(extracted_json, category, markdown)
 
     confidence = int(corrected.get("confidence", 0))
     if issues:

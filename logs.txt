@@ -76,3 +76,30 @@ Notion ✔
 Zendesk ✔
 Twilio ✔
 MongoDB Atlas ✔
+Salesforce ✔
+HubSpot ✔
+Slack ✔
+Stripe ✔
+GitHub ✔
+Shopify ✔
+Notion ✔
+Zendesk ✔
+Twilio ✔
+MongoDB Atlas ✔
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Attio ✔
+Twenty ✔
+Podio ✔
+Zoho CRM ✔
+Close ✔
+Copper ✔
+DealCloud ✔
+Zendesk ✔
+Intercom ✔
+Freshdesk ✔
+Front ✔
+Pylon ✔
+LiveAgent ✔
+Plain ✔
