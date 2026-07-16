@@ -141,30 +141,3 @@ If you want, I can now:
 Reply with which of the above you'd like me to do next.
 # composio-toolkit-research
 AI-powered research pipeline for analyzing API toolkits, authentication methods, buildability, and MCP support across 100 SaaS applications.
-# Composio Toolkit Research Agent
-
-## Overview
-
-## Problem Statement
-
-## Architecture
-
-## Features
-
-## Tech Stack
-
-## Project Structure
-
-## Installation
-
-## Usage
-
-## Research Workflow
-
-## Verification Process
-
-## Results
-
-## Future Improvements
-
-## License
