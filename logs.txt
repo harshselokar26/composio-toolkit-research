@@ -1,0 +1,78 @@
+Salesforce ✔
+HubSpot ❌
+No Docs or research failed
+Pipedrive ❌
+No Docs or research failed
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Salesforce ❌
+No Docs or research failed
+HubSpot ❌
+No Docs or research failed
+Pipedrive ❌
+No Docs or research failed
+Salesforce ❌
+No Docs or research failed
+HubSpot ❌
+No Docs or research failed
+Pipedrive ❌
+No Docs or research failed
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Salesforce ❌
+No Docs or research failed
+HubSpot ✔
+Pipedrive ✔
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Salesforce ❌
+No Docs or research failed
+HubSpot ❌
+No Docs or research failed
+Pipedrive ❌
+No Docs or research failed
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Salesforce ✔
+HubSpot ✔
+Pipedrive ✔
+Salesforce ❌
+[Errno 13] Permission denied: 'C:\\Users\\harsh\\Desktop\\composio-toolkit-research\\composio-toolkit-research\\data\\research_results.csv'
+HubSpot ✔
+Slack ✔
+Stripe ✔
+GitHub ✔
+Shopify ✔
+Notion ✔
+Zendesk ✔
+Twilio ✔
+MongoDB Atlas ✔
+Salesforce ✔
+HubSpot ✔
+Slack ✔
+Stripe ✔
+GitHub ✔
+Shopify ✔
+Notion ✔
+Zendesk ✔
+Twilio ✔
+MongoDB Atlas ✔

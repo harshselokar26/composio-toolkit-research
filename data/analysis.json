@@ -1,0 +1,64 @@
+{
+  "total_rows": 51,
+  "manual_review_rate": 0,
+  "confidence": {
+    "mean": 0,
+    "min": 0,
+    "max": 0
+  },
+  "distributions": {
+    "auth_method": {
+      "REST": 44,
+      "Unknown": 5,
+      "RESTful API": 2
+    },
+    "self_serve": {
+      "Small": 17,
+      "Medium": 11,
+      "Large": 7,
+      "Unknown": 5,
+      "Free text summary grounded in the documentation.": 4,
+      "Very Large": 3,
+      "Public and private apps, integrations": 2,
+      "crm, contacts, companies": 1,
+      "crm, contacts, companies, deals, tickets": 1
+    },
+    "buildability": {
+      "87": 10,
+      "1": 9,
+      "0": 8,
+      "100": 8,
+      "74": 7,
+      "80": 6,
+      "56": 2,
+      "60": 1
+    },
+    "mcp_support": {
+      "https://developers.hubspot.com/docs/api-reference/latest/overview, https://developers.hubspot.com/docs, https://developers.hubspot.com/": 13,
+      "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart.htm, https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm, https://developer.salesforce.com/docs/apis": 11,
+      "https://developers.pipedrive.com/docs/api/v1, https://developers.pipedrive.com/, https://pipedrive.readme.io/docs/getting-started": 11,
+      "https://docs.slack.dev/, https://api.slack.com/authentication/basics, https://docs.slack.dev/apis/web-api/": 2,
+      "https://docs.stripe.com/api, https://docs.stripe.com/api/authentication, https://docs.stripe.com/get-started": 2,
+      "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api, https://docs.github.com/rest/guides/getting-started-with-the-rest-api, https://docs.github.com/en/rest": 2,
+      "https://shopify.dev/docs/api/usage/authentication, https://shopify.dev/docs/apps/build/authentication-authorization, https://praella.com/blogs/shopify-insights/mastering-shopify-api-authentication-a-comprehensive-guide": 2,
+      "https://developers.notion.com/guides/get-started/overview, https://developers.notion.com/guides/get-started/quick-start, https://developers.notion.com/guides/get-started/authorization": 2,
+      "https://developer.zendesk.com/api-reference/introduction/security-and-auth/, https://developer.zendesk.com/api-reference/, https://developer.zendesk.com/documentation/": 2,
+      "https://www.twilio.com/docs, https://www.twilio.com/docs/iam/api, https://www.twilio.com/docs/messaging/api": 2,
+      "https://www.mongodb.com/docs/atlas/api/api-authentication/, https://www.mongodb.com/docs/atlas/api/atlas-admin-api-ref/, https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/": 2
+    },
+    "blocker": {
+      "False": 24,
+      "True": 4
+    }
+  },
+  "categories": {
+    "Self Serve": 37,
+    "Unknown": 6,
+    "Yes": 6,
+    "true": 2
+  },
+  "top_blockers": {
+    "False": 24,
+    "True": 4
+  }
+}
