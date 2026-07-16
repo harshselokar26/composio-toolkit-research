@@ -1,6 +1,6 @@
 # Composio Toolkit Research — 100 Apps Case Study
 
-An automated research pipeline and self-contained interactive case study that inspects developer toolkits across 100 SaaS apps. The project extracts API/SDK metadata, authentication patterns, buildability signals, and verification flags — then produces a single-page HTML case study that is deployed on Netlify. Streamlit is used only as a lightweight viewer around the same generated HTML file.
+An automated research pipeline and self-contained interactive case study that inspects developer toolkits across 100 SaaS apps. The project extracts API/SDK metadata, authentication patterns, buildability signals, and verification flags — then produces a single-page HTML case study and optional Streamlit viewer.
 
 Repository: https://github.com/harshselokar26/composio-toolkit-research.git
 
@@ -8,12 +8,11 @@ Repository: https://github.com/harshselokar26/composio-toolkit-research.git
 
 - Single-file deliverable: `html/assets/case_study.html` (interactive, Chart.js charts, embedded dataset and table)
 - Pipeline drivers: `src/main.py` runs the research loop; `src/analysis.py` summarizes outputs and writes the case study HTML.
-- Netlify deliverable: the generated HTML file is the main published artifact and can be hosted directly on Netlify.
-- Streamlit wrapper: `app.py` embeds the generated HTML for local viewing only.
+- Streamlit wrapper: `app.py` embeds the generated HTML for quick local viewing or Streamlit Cloud deployment.
 
 ## Project structure (top-level)
 
-- `app.py` — Streamlit viewer that embeds the case study
+- `app.py` — netlify viewer that embeds the case study
 - `html/assets/case_study.html` — generated interactive case study
 - `data/apps.csv` — source list of apps to research
 - `outputs/` — results written by the pipeline (`research_results.csv`, `research_results.json`, `analysis.json`, `verification_sample.csv`)
@@ -39,6 +38,9 @@ python -m venv .venv
 3. Install the Python dependencies. If `requirements.txt` is missing, corrupted, or written in UTF-16, regenerate it after installing packages in the activated environment:
 
 ```powershell
+# install minimal viewer
+pip install streamlit
+# or install all deps
 pip install -r requirements.txt
 # if you need the viewer only, install Streamlit explicitly
 pip install streamlit
@@ -58,14 +60,11 @@ python src/main.py --limit 10
 python src/main.py --reset
 ```
 
-5. Open the generated case study:
+4. View the generated HTML directly (open `html/assets/case_study.html` in a browser), or run the bundled Streamlit viewer:
 
 ```powershell
-# open the generated HTML directly in a browser
-# html/assets/case_study.html
-
-# or run the Streamlit viewer (viewer only)
 streamlit run app.py
+# then open http://localhost:8501
 ```
 
 6. Deploy the HTML page on Netlify:
@@ -94,9 +93,9 @@ cd src
 python analysis.py  # if adapted, otherwise use main.py flow
 ```
 
-## Streamlit viewer (`app.py`)
+## netlify viewer (`app.py`)
 
-`app.py` is a small wrapper that reads `html/assets/case_study.html` and renders it with `streamlit.components.v1.html()` so the page loads exactly as authored. It is useful for local previewing, but the main deployment path is the standalone HTML page hosted on Netlify.
+`app.py` is a small wrapper that reads `html/assets/case_study.html` and renders it with `streamlit.components.v1.html()` so the page loads exactly as authored (Chart.js via CDN, embedded data). This is useful for quick demos and Streamlit Cloud deployments.
 
 ## CSS animation example (copy into your HTML head or site CSS)
 
@@ -118,11 +117,11 @@ Quick JS to add the class on load:
 </script>
 ```
 
-## Example: embedding the HTML in Streamlit (the project already includes `app.py`)
+## Example: embedding the HTML in netlify (the project already includes `app.py`)
 
 ```python
-import streamlit as st
-from streamlit.components.v1 import html as st_html
+import netlify as st
+from netlify.components.v1 import html as st_html
 html = open('html/assets/case_study.html','r',encoding='utf-8').read()
 st.set_page_config(layout='wide')
 st_html(html, height=1400, scrolling=True)
