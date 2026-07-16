@@ -127,17 +127,3 @@ st_html(html, height=1400, scrolling=True)
 - Report issues or feature requests on GitHub.
 - To add apps to the dataset, edit `data/apps.csv` and re-run the pipeline.
 
-## License
-
-See `LICENSE` in this repository.
-
----
-If you want, I can now:
-
-1. Add `streamlit` to `requirements.txt` and reformat the file as UTF-8.
-2. Create a short animated GIF of the `case_study.html` for README display (I can generate a static GIF from a headless browser if you want).
-3. Prepare a GitHub-ready branch and instructions for a Streamlit Cloud one-click deploy.
-
-Reply with which of the above you'd like me to do next.
-# composio-toolkit-research
-AI-powered research pipeline for analyzing API toolkits, authentication methods, buildability, and MCP support across 100 SaaS applications.
