@@ -1,6 +1,6 @@
 # Composio Toolkit Research — 100 Apps Case Study
 
-An automated research pipeline and self-contained interactive case study that inspects developer toolkits across 100 SaaS apps. The project extracts API/SDK metadata, authentication patterns, buildability signals, and verification flags — then produces a single-page HTML case study and optional Streamlit viewer.
+An automated research pipeline and self-contained interactive case study that inspects developer toolkits across 100 SaaS apps. The project extracts API/SDK metadata, authentication patterns, buildability signals, and verification flags — then produces a single-page HTML case study that is deployed on Netlify. Streamlit is used only as a lightweight viewer around the same generated HTML file.
 
 Repository: https://github.com/harshselokar26/composio-toolkit-research.git
 
@@ -8,7 +8,8 @@ Repository: https://github.com/harshselokar26/composio-toolkit-research.git
 
 - Single-file deliverable: `html/assets/case_study.html` (interactive, Chart.js charts, embedded dataset and table)
 - Pipeline drivers: `src/main.py` runs the research loop; `src/analysis.py` summarizes outputs and writes the case study HTML.
-- Streamlit wrapper: `app.py` embeds the generated HTML for quick local viewing or Streamlit Cloud deployment.
+- Netlify deliverable: the generated HTML file is the main published artifact and can be hosted directly on Netlify.
+- Streamlit wrapper: `app.py` embeds the generated HTML for local viewing only.
 
 ## Project structure (top-level)
 
@@ -19,47 +20,58 @@ Repository: https://github.com/harshselokar26/composio-toolkit-research.git
 - `src/` — pipeline code: `main.py`, `analysis.py`, `research_agent.py`, `llm.py`, `utils.py`, `verifier.py`, etc.
 - `requirements.txt` — Python dependencies (ensure UTF-8 encoding; see notes)
 
-## Quickstart — run locally
+## Quickstart — fresh setup from clone to run
 
-1. From the repository root, create and activate a virtualenv (recommended):
+1. Clone the repository and enter it:
+
+```powershell
+git clone https://github.com/harshselokar26/composio-toolkit-research.git
+cd composio-toolkit-research
+```
+
+2. Create and activate a virtual environment:
 
 ```powershell
 python -m venv .venv
-# PowerShell
 .\.venv\Scripts\Activate.ps1
-# or cmd.exe
-.venv\Scripts\activate.bat
 ```
 
-2. Install dependencies. If `requirements.txt` looks corrupted (UTF-16 / BOM), regenerate it in your activated venv:
+3. Install the Python dependencies. If `requirements.txt` is missing, corrupted, or written in UTF-16, regenerate it after installing packages in the activated environment:
 
 ```powershell
-# install minimal viewer
-pip install streamlit
-# or install all deps
 pip install -r requirements.txt
-# to regenerate clean UTF-8 requirements after installing, run:
+# if you need the viewer only, install Streamlit explicitly
+pip install streamlit
+# after installing everything successfully, save a clean UTF-8 requirements file
 pip freeze > requirements.txt
 ```
 
-3. Run the full research pipeline (this will read `data/apps.csv`, execute the research agent for each app, save outputs, and generate the HTML):
+4. Run the research pipeline to regenerate the outputs and HTML case study:
 
 ```powershell
-python src/main.py  # runs all apps
-# short sample run (fast):
+python src/main.py
+# short sample run (fast)
 python src/main.py --sample
-# limit number of apps:
+# limit the number of apps
 python src/main.py --limit 10
-# reset outputs before running:
+# reset existing outputs before running again
 python src/main.py --reset
 ```
 
-4. View the generated HTML directly (open `html/assets/case_study.html` in a browser), or run the bundled Streamlit viewer:
+5. Open the generated case study:
 
 ```powershell
+# open the generated HTML directly in a browser
+# html/assets/case_study.html
+
+# or run the Streamlit viewer (viewer only)
 streamlit run app.py
-# then open http://localhost:8501
 ```
+
+6. Deploy the HTML page on Netlify:
+
+- Upload the contents of the `html/assets` folder (or the single `case_study.html` file) to a Netlify site.
+- The Streamlit app is only a local viewer wrapper and is not required for the Netlify deployment.
 
 ## How it works (high level)
 
@@ -84,7 +96,7 @@ python analysis.py  # if adapted, otherwise use main.py flow
 
 ## Streamlit viewer (`app.py`)
 
-`app.py` is a small wrapper that reads `html/assets/case_study.html` and renders it with `streamlit.components.v1.html()` so the page loads exactly as authored (Chart.js via CDN, embedded data). This is useful for quick demos and Streamlit Cloud deployments.
+`app.py` is a small wrapper that reads `html/assets/case_study.html` and renders it with `streamlit.components.v1.html()` so the page loads exactly as authored. It is useful for local previewing, but the main deployment path is the standalone HTML page hosted on Netlify.
 
 ## CSS animation example (copy into your HTML head or site CSS)
 
