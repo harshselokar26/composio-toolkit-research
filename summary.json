@@ -1,0 +1,305 @@
+{
+  "authentication_distribution": [
+    {
+      "value": "OAuth2",
+      "count": 47
+    },
+    {
+      "value": "API Key",
+      "count": 24
+    },
+    {
+      "value": "Other",
+      "count": 17
+    },
+    {
+      "value": "Unknown",
+      "count": 5
+    },
+    {
+      "value": "Basic",
+      "count": 3
+    },
+    {
+      "value": "PAT",
+      "count": 3
+    }
+  ],
+  "api_type_distribution": [
+    {
+      "value": "REST",
+      "count": 93
+    },
+    {
+      "value": "Unknown",
+      "count": 5
+    },
+    {
+      "value": "GraphQL",
+      "count": 1
+    }
+  ],
+  "self_serve_distribution": [
+    {
+      "value": "Self Serve",
+      "count": 72
+    },
+    {
+      "value": "Paid Plan",
+      "count": 13
+    },
+    {
+      "value": "Unknown",
+      "count": 8
+    },
+    {
+      "value": "Admin Approval",
+      "count": 3
+    },
+    {
+      "value": "Enterprise",
+      "count": 3
+    }
+  ],
+  "buildability_distribution": [
+    {
+      "value": "Yes",
+      "count": 88
+    },
+    {
+      "value": "No",
+      "count": 11
+    }
+  ],
+  "mcp_distribution": [
+    {
+      "value": "No",
+      "count": 91
+    },
+    {
+      "value": "Yes",
+      "count": 8
+    }
+  ],
+  "blocker_distribution": [
+    {
+      "value": "Unknown",
+      "count": 99
+    }
+  ],
+  "confidence_summary": {
+    "average": 77.77,
+    "median": 87.0,
+    "lowest": 0,
+    "highest": 95,
+    "manual_review_count": 17
+  },
+  "counts_by_category": {
+    "CRM and Sales": 10,
+    "Support and Helpdesk": 10,
+    "Communications and Messaging": 10,
+    "Marketing, Ads, Email and Social": 10,
+    "Ecommerce": 10,
+    "Developer, Infra and Data platforms": 10,
+    "Productivity and Project Management": 10,
+    "Finance and Fintech": 10,
+    "AI, Research and Media-native": 10,
+    "Data, SEO and Scraping": 9
+  },
+  "auth_by_category": {
+    "AI, Research and Media-native": {
+      "API Key": 1,
+      "Basic": 0,
+      "OAuth2": 6,
+      "Other": 2,
+      "PAT": 0,
+      "Unknown": 1
+    },
+    "CRM and Sales": {
+      "API Key": 4,
+      "Basic": 0,
+      "OAuth2": 6,
+      "Other": 0,
+      "PAT": 0,
+      "Unknown": 0
+    },
+    "Communications and Messaging": {
+      "API Key": 1,
+      "Basic": 1,
+      "OAuth2": 7,
+      "Other": 1,
+      "PAT": 0,
+      "Unknown": 0
+    },
+    "Data, SEO and Scraping": {
+      "API Key": 4,
+      "Basic": 1,
+      "OAuth2": 1,
+      "Other": 3,
+      "PAT": 0,
+      "Unknown": 0
+    },
+    "Developer, Infra and Data platforms": {
+      "API Key": 4,
+      "Basic": 0,
+      "OAuth2": 2,
+      "Other": 3,
+      "PAT": 0,
+      "Unknown": 1
+    },
+    "Ecommerce": {
+      "API Key": 2,
+      "Basic": 0,
+      "OAuth2": 8,
+      "Other": 0,
+      "PAT": 0,
+      "Unknown": 0
+    },
+    "Finance and Fintech": {
+      "API Key": 4,
+      "Basic": 0,
+      "OAuth2": 4,
+      "Other": 1,
+      "PAT": 0,
+      "Unknown": 1
+    },
+    "Marketing, Ads, Email and Social": {
+      "API Key": 2,
+      "Basic": 0,
+      "OAuth2": 7,
+      "Other": 1,
+      "PAT": 0,
+      "Unknown": 0
+    },
+    "Productivity and Project Management": {
+      "API Key": 0,
+      "Basic": 0,
+      "OAuth2": 1,
+      "Other": 4,
+      "PAT": 3,
+      "Unknown": 2
+    },
+    "Support and Helpdesk": {
+      "API Key": 2,
+      "Basic": 1,
+      "OAuth2": 5,
+      "Other": 2,
+      "PAT": 0,
+      "Unknown": 0
+    }
+  },
+  "self_serve_by_category": {
+    "AI, Research and Media-native": {
+      "Admin Approval": 0,
+      "Enterprise": 2,
+      "Paid Plan": 2,
+      "Self Serve": 5,
+      "Unknown": 1
+    },
+    "CRM and Sales": {
+      "Admin Approval": 0,
+      "Enterprise": 0,
+      "Paid Plan": 0,
+      "Self Serve": 10,
+      "Unknown": 0
+    },
+    "Communications and Messaging": {
+      "Admin Approval": 0,
+      "Enterprise": 0,
+      "Paid Plan": 0,
+      "Self Serve": 10,
+      "Unknown": 0
+    },
+    "Data, SEO and Scraping": {
+      "Admin Approval": 1,
+      "Enterprise": 1,
+      "Paid Plan": 1,
+      "Self Serve": 6,
+      "Unknown": 0
+    },
+    "Developer, Infra and Data platforms": {
+      "Admin Approval": 0,
+      "Enterprise": 0,
+      "Paid Plan": 0,
+      "Self Serve": 9,
+      "Unknown": 1
+    },
+    "Ecommerce": {
+      "Admin Approval": 0,
+      "Enterprise": 0,
+      "Paid Plan": 3,
+      "Self Serve": 6,
+      "Unknown": 1
+    },
+    "Finance and Fintech": {
+      "Admin Approval": 0,
+      "Enterprise": 0,
+      "Paid Plan": 4,
+      "Self Serve": 5,
+      "Unknown": 1
+    },
+    "Marketing, Ads, Email and Social": {
+      "Admin Approval": 0,
+      "Enterprise": 0,
+      "Paid Plan": 1,
+      "Self Serve": 9,
+      "Unknown": 0
+    },
+    "Productivity and Project Management": {
+      "Admin Approval": 0,
+      "Enterprise": 0,
+      "Paid Plan": 1,
+      "Self Serve": 7,
+      "Unknown": 2
+    },
+    "Support and Helpdesk": {
+      "Admin Approval": 2,
+      "Enterprise": 0,
+      "Paid Plan": 1,
+      "Self Serve": 5,
+      "Unknown": 2
+    }
+  },
+  "buildability_by_category": {
+    "AI, Research and Media-native": {
+      "No": 4,
+      "Yes": 6
+    },
+    "CRM and Sales": {
+      "No": 0,
+      "Yes": 10
+    },
+    "Communications and Messaging": {
+      "No": 0,
+      "Yes": 10
+    },
+    "Data, SEO and Scraping": {
+      "No": 1,
+      "Yes": 8
+    },
+    "Developer, Infra and Data platforms": {
+      "No": 1,
+      "Yes": 9
+    },
+    "Ecommerce": {
+      "No": 0,
+      "Yes": 10
+    },
+    "Finance and Fintech": {
+      "No": 1,
+      "Yes": 9
+    },
+    "Marketing, Ads, Email and Social": {
+      "No": 0,
+      "Yes": 10
+    },
+    "Productivity and Project Management": {
+      "No": 2,
+      "Yes": 8
+    },
+    "Support and Helpdesk": {
+      "No": 2,
+      "Yes": 8
+    }
+  }
+}

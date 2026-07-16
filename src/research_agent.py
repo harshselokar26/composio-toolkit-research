@@ -33,21 +33,44 @@ def research_app(name, website, category):
             print("No documentation found.")
             return None
 
-        preferred = []
+        def url_text(page):
+            return page.url if hasattr(page, "url") else page["url"]
+
+        def is_official_docs(url):
+            url_lower = url.lower()
+            doc_indicators = [
+                "developer.",
+                "developers.",
+                "docs.",
+                "api.",
+                ".dev",
+                "official",
+                "reference",
+            ]
+            if any(indicator in url_lower for indicator in doc_indicators):
+                if any(block in url_lower for block in [
+                    "medium.com",
+                    "reddit.com",
+                    "stoplight.io",
+                    "rapidapi.com",
+                    "youtube.com",
+                    "blog.",
+                ]):
+                    return False
+                return True
+            return False
+
+        official_docs = []
+        third_party_docs = []
 
         for page in search.web:
-            url = page.url if hasattr(page, "url") else page["url"]
+            url = url_text(page)
+            if is_official_docs(url):
+                official_docs.append(page)
+            else:
+                third_party_docs.append(page)
 
-            if any(keyword in url.lower() for keyword in [
-                "developers",
-                "developer",
-                "docs",
-                "api",
-                "reference"
-            ]):
-                preferred.append(page)
-
-        pages = (preferred or search.web)[:3]
+        pages = (official_docs or third_party_docs)[:3]
 
         combined_markdown = ""
         evidence_urls = []
@@ -91,10 +114,12 @@ def research_app(name, website, category):
         if verification.get("corrected_json"):
             research = research.model_copy(update=verification["corrected_json"])
 
-        research.manual_review = verification.get("manual_review", False)
-        research.issues = verification.get("issues", [])
-
-        research.evidence_url = ", ".join(evidence_urls)
+        research = research.model_copy(update={
+            "manual_review": verification.get("manual_review", False),
+            "issues": verification.get("issues", []),
+            "name": name,
+            "evidence_url": ", ".join(evidence_urls),
+        })
 
         return research.model_dump()
 

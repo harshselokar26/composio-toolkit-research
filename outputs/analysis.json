@@ -1,0 +1,414 @@
+{
+  "total_rows": 99,
+  "manual_review_rate": 0,
+  "confidence": {
+    "mean": 0,
+    "min": 0,
+    "max": 0
+  },
+  "top_auth_methods": [
+    {
+      "value": "OAuth 2.0",
+      "count": 36,
+      "share": 36.4
+    },
+    {
+      "value": "API key",
+      "count": 23,
+      "share": 23.2
+    },
+    {
+      "value": "API token",
+      "count": 13,
+      "share": 13.1
+    },
+    {
+      "value": "Unknown",
+      "count": 5,
+      "share": 5.1
+    },
+    {
+      "value": "Bearer token",
+      "count": 4,
+      "share": 4.0
+    },
+    {
+      "value": "Basic auth",
+      "count": 3,
+      "share": 3.0
+    },
+    {
+      "value": "Personal access token",
+      "count": 3,
+      "share": 3.0
+    },
+    {
+      "value": "OAuth 2.0, API key",
+      "count": 2,
+      "share": 2.0
+    },
+    {
+      "value": "OAuth 2.0, API key, API token, Bearer token, Basic auth, Personal access token",
+      "count": 2,
+      "share": 2.0
+    },
+    {
+      "value": "OAuth 2.0, API token, OAuth access token",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "OAuth 2.0, API token",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "OAuth 2.0, API key, Bearer token, Basic auth",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "API key, API token, Basic auth, JWT Bearer",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "OAuth 1.0a, tokens, login credentials",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "API key or OAuth access token",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "OAuth 2.0, API token, Bearer token, Personal access token",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "API key, OAuth 2.0, API token, Personal access token",
+      "count": 1,
+      "share": 1.0
+    }
+  ],
+  "top_self_serve": [
+    {
+      "value": "Self Serve",
+      "count": 72,
+      "share": 72.7
+    },
+    {
+      "value": "Paid Plan",
+      "count": 13,
+      "share": 13.1
+    },
+    {
+      "value": "Unknown",
+      "count": 8,
+      "share": 8.1
+    },
+    {
+      "value": "Admin Approval",
+      "count": 3,
+      "share": 3.0
+    },
+    {
+      "value": "Enterprise",
+      "count": 3,
+      "share": 3.0
+    }
+  ],
+  "top_api_types": [
+    {
+      "value": "REST",
+      "count": 93,
+      "share": 93.9
+    },
+    {
+      "value": "Unknown",
+      "count": 5,
+      "share": 5.1
+    },
+    {
+      "value": "GraphQL",
+      "count": 1,
+      "share": 1.0
+    }
+  ],
+  "top_buildability": [
+    {
+      "value": "Yes",
+      "count": 88,
+      "share": 88.9
+    },
+    {
+      "value": "Unknown",
+      "count": 11,
+      "share": 11.1
+    }
+  ],
+  "top_mcp_support": [
+    {
+      "value": "Unknown",
+      "count": 91,
+      "share": 91.9
+    },
+    {
+      "value": "Yes",
+      "count": 8,
+      "share": 8.1
+    }
+  ],
+  "top_blockers": [],
+  "top_categories": [
+    {
+      "value": "CRM and Sales",
+      "count": 10,
+      "share": 10.1
+    },
+    {
+      "value": "Support and Helpdesk",
+      "count": 10,
+      "share": 10.1
+    },
+    {
+      "value": "Communications and Messaging",
+      "count": 10,
+      "share": 10.1
+    },
+    {
+      "value": "Marketing, Ads, Email and Social",
+      "count": 10,
+      "share": 10.1
+    },
+    {
+      "value": "Ecommerce",
+      "count": 10,
+      "share": 10.1
+    },
+    {
+      "value": "Developer, Infra and Data platforms",
+      "count": 10,
+      "share": 10.1
+    },
+    {
+      "value": "Productivity and Project Management",
+      "count": 10,
+      "share": 10.1
+    },
+    {
+      "value": "Finance and Fintech",
+      "count": 10,
+      "share": 10.1
+    },
+    {
+      "value": "AI, Research and Media-native",
+      "count": 10,
+      "share": 10.1
+    },
+    {
+      "value": "Data, SEO and Scraping",
+      "count": 9,
+      "share": 9.1
+    }
+  ],
+  "top_credential_requirements": [
+    {
+      "value": "API key",
+      "count": 30,
+      "share": 30.3
+    },
+    {
+      "value": "OAuth credentials",
+      "count": 16,
+      "share": 16.2
+    },
+    {
+      "value": "API token",
+      "count": 16,
+      "share": 16.2
+    },
+    {
+      "value": "Developer account + Connected App + OAuth",
+      "count": 11,
+      "share": 11.1
+    },
+    {
+      "value": "Personal access token",
+      "count": 7,
+      "share": 7.1
+    },
+    {
+      "value": "Secret API Key",
+      "count": 5,
+      "share": 5.1
+    },
+    {
+      "value": "Unknown",
+      "count": 3,
+      "share": 3.0
+    },
+    {
+      "value": "API key, OAuth credentials",
+      "count": 2,
+      "share": 2.0
+    },
+    {
+      "value": "API token, OAuth access token, Global OAuth tokens",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "API token, Access token",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "OAuth credentials, API key, Access token",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "API key, API token, OAuth credentials",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "Public API key",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "OAuth 1.0a, tokens, login credentials",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "API key or OAuth access token",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "Access token",
+      "count": 1,
+      "share": 1.0
+    },
+    {
+      "value": "OAuth API keys",
+      "count": 1,
+      "share": 1.0
+    }
+  ],
+  "categories": {
+    "CRM and Sales": 10,
+    "Support and Helpdesk": 10,
+    "Communications and Messaging": 10,
+    "Marketing, Ads, Email and Social": 10,
+    "Ecommerce": 10,
+    "Developer, Infra and Data platforms": 10,
+    "Productivity and Project Management": 10,
+    "Finance and Fintech": 10,
+    "AI, Research and Media-native": 10,
+    "Data, SEO and Scraping": 9
+  },
+  "findings": [
+    "Top auth method is OAuth 2.0 (36.4%).",
+    "Most products are Self Serve (72.7%)."
+  ],
+  "apps_needing_review": [
+    {
+      "name": "Attio",
+      "confidence": 69,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "Close",
+      "confidence": 69,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "Zendesk",
+      "confidence": 82,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "Intercom",
+      "confidence": 69,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "Help Scout",
+      "confidence": 82,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "Vonage",
+      "confidence": 82,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "Klaviyo",
+      "confidence": 64,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown', 'api_type must be one of: GraphQL, REST, SDK, SOAP, Unknown']"
+    },
+    {
+      "name": "systeme.io",
+      "confidence": 82,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "Magento (Adobe Commerce)",
+      "confidence": 51,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown', 'api_type must be one of: GraphQL, REST, SDK, SOAP, Unknown']"
+    },
+    {
+      "name": "Squarespace",
+      "confidence": 82,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "Sherlock",
+      "confidence": 69,
+      "issues": "['api_type must be one of: GraphQL, REST, SDK, SOAP, Unknown']"
+    },
+    {
+      "name": "GitHub",
+      "confidence": 82,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "Snowflake",
+      "confidence": 82,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "ClickUp",
+      "confidence": 90,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    },
+    {
+      "name": "Otter AI",
+      "confidence": 69,
+      "issues": "['mcp_support should be Unknown unless the docs explicitly mention MCP']"
+    },
+    {
+      "name": "Devin",
+      "confidence": 82,
+      "issues": "['mcp_support should be Unknown unless the docs explicitly mention MCP']"
+    },
+    {
+      "name": "Grain",
+      "confidence": 56,
+      "issues": "['credential_requirement must be one of: API key, API token, Access token, Developer account + Connected App + OAuth, Internal Integration Token, OAuth credentials, Personal access token, Programmatic API Key, Secret API Key, Service Account Key, Unknown']"
+    }
+  ],
+  "verification_stats": {
+    "manual_review_count": 17,
+    "manual_review_rate": 0,
+    "average_confidence": 0,
+    "min_confidence": 0,
+    "max_confidence": 0
+  }
+}

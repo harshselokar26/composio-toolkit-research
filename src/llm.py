@@ -102,6 +102,8 @@ Do not change the Known Category.
         if fallback_scope != "Unknown":
             data["api_scope"] = fallback_scope
 
+    data["name"] = name
+
     required_fields = [
         "description",
         "auth_method",

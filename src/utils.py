@@ -1,3 +1,4 @@
+import csv
 import json
 import os
 import re
@@ -5,9 +6,14 @@ from pathlib import Path
 
 import pandas as pd
 
-CSV_FILE = Path(__file__).resolve().parents[1] / "data" / "research_results.csv"
-JSON_FILE = Path(__file__).resolve().parents[1] / "data" / "research_results.json"
-LOG_FILE = Path(__file__).resolve().parents[1] / "logs.txt"
+OUTPUT_DIR = Path(__file__).resolve().parents[1] / "outputs"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+CSV_FILE = OUTPUT_DIR / "research_results.csv"
+JSON_FILE = OUTPUT_DIR / "research_results.json"
+ERROR_FILE = OUTPUT_DIR / "errors.csv"
+VERIFICATION_FILE = OUTPUT_DIR / "verification_sample.csv"
+LOG_FILE = OUTPUT_DIR / "logs.txt"
 
 ENDPOINT_PATTERN = re.compile(r"\b(?:GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS)\s+/[^\s]*", re.IGNORECASE)
 
@@ -54,7 +60,49 @@ def save_result(result):
     if result is None:
         return
 
+    if "name" in result:
+        result["App"] = result.pop("name")
+    if "manual_review" in result:
+        result["Needs Review"] = result.pop("manual_review")
+
+    rename_map = {
+        "category": "Category",
+        "description": "Description",
+        "auth_method": "Auth Method",
+        "credential_requirement": "Credential Requirement",
+        "self_serve": "Self Serve",
+        "api_type": "API Type",
+        "api_scope": "API Surface",
+        "mcp_support": "MCP",
+        "buildability": "Buildability",
+        "blocker": "Blocker",
+        "evidence_url": "Evidence URL",
+        "confidence": "Confidence",
+        "issues": "Issues",
+    }
+
     df = pd.DataFrame([result])
+    df = df.rename(columns=rename_map)
+    columns_order = [
+        "App",
+        "Category",
+        "Description",
+        "Auth Method",
+        "Credential Requirement",
+        "Self Serve",
+        "API Type",
+        "API Surface",
+        "MCP",
+        "Buildability",
+        "Blocker",
+        "Evidence URL",
+        "Confidence",
+        "Needs Review",
+        "Issues",
+    ]
+    columns_order = [col for col in columns_order if col in df.columns]
+    df = df[columns_order]
+
     file_exists = CSV_FILE.exists()
 
     try:
@@ -101,3 +149,18 @@ def append_log(name, success, reason=""):
 
     with open(LOG_FILE, "a", encoding="utf-8") as file:
         file.write("\n".join(lines))
+
+
+def append_error(name, error, notes=""):
+    fieldnames = ["app", "error", "notes"]
+    write_header = not ERROR_FILE.exists()
+
+    with open(ERROR_FILE, "a", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        if write_header:
+            writer.writeheader()
+        writer.writerow({
+            "app": name,
+            "error": error,
+            "notes": notes,
+        })

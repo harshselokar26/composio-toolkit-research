@@ -5,6 +5,8 @@ from pydantic import BaseModel, Field
 
 class AppResearch(BaseModel):
 
+    name: str
+
     category: str
 
     description: str
