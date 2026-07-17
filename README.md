@@ -64,6 +64,8 @@ pip freeze > requirements.txt
 python src/main.py
 ```
 
+This command runs the full research pipeline across the 100 apps in `data/apps.csv`. It writes results into `outputs/`, generates analysis data, creates the Netlify-ready report at `html/assets/case_study.html`, and updates any charts used by the case study.
+
 Useful options:
 
 ```powershell
@@ -71,6 +73,10 @@ python src/main.py --sample
 python src/main.py --limit 10
 python src/main.py --reset
 ```
+
+- `--sample`: run only the short test set instead of all apps.
+- `--limit 10`: run the first 10 apps only.
+- `--reset`: delete old output files before running.
 
 ### 5. View the generated report
 
