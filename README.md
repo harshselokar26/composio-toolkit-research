@@ -1,8 +1,12 @@
 # Composio Toolkit Research — 100 Apps Case Study
 
-An automated research pipeline and self-contained interactive case study that inspects developer toolkits across 100 SaaS apps. The project extracts API/SDK metadata, authentication patterns, buildability signals, and verification flags — then produces a single-page HTML case study and optional Streamlit viewer.
+A self-contained research pipeline and interactive case study for 100 SaaS apps. It extracts API/SDK metadata, authentication patterns, buildability signals, and verification flags, then produces a static HTML report and an optional Streamlit viewer.
 
-Repository: https://github.com/harshselokar26/composio-toolkit-research.git
+- Repository: https://github.com/harshselokar26/composio-toolkit-research.git
+- Live demo: https://earnest-treacle-7291ba.netlify.app/
+- Deploy branch: `main`
+- Netlify team: `harshselokar26’s team`
+- Publish directory: `html/assets`
 
 ## Highlights
 
@@ -21,56 +25,73 @@ Repository: https://github.com/harshselokar26/composio-toolkit-research.git
 
 ## Quickstart — fresh setup from clone to run
 
-1. Clone the repository and enter it:
+### 1. Clone the repository
 
 ```powershell
 git clone https://github.com/harshselokar26/composio-toolkit-research.git
 cd composio-toolkit-research
 ```
 
-2. Create and activate a virtual environment:
+### 2. Create and activate a virtual environment
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-3. Install the Python dependencies. If `requirements.txt` is missing, corrupted, or written in UTF-16, regenerate it after installing packages in the activated environment:
+### 3. Install dependencies
 
 ```powershell
-# install minimal viewer
-pip install streamlit
-# or install all deps
 pip install -r requirements.txt
-# if you need the viewer only, install Streamlit explicitly
+```
+
+If `requirements.txt` has encoding issues, use this instead:
+
+```powershell
 pip install streamlit
-# after installing everything successfully, save a clean UTF-8 requirements file
+pip install -r requirements.txt
+```
+
+Then freeze the exact installed dependencies:
+
+```powershell
 pip freeze > requirements.txt
 ```
 
-4. Run the research pipeline to regenerate the outputs and HTML case study:
+### 4. Run the research pipeline
 
 ```powershell
 python src/main.py
-# short sample run (fast)
+```
+
+Useful options:
+
+```powershell
 python src/main.py --sample
-# limit the number of apps
 python src/main.py --limit 10
-# reset existing outputs before running again
 python src/main.py --reset
 ```
 
-4. View the generated HTML directly (open `html/assets/case_study.html` in a browser), or run the bundled Streamlit viewer:
+### 5. View the generated report
+
+Open `html/assets/case_study.html` directly in a browser, or run the bundled Streamlit viewer:
 
 ```powershell
 streamlit run app.py
-# then open http://localhost:8501
 ```
 
-6. Deploy the HTML page on Netlify:
+Then visit `http://localhost:8501`.
 
-- Upload the contents of the `html/assets` folder (or the single `case_study.html` file) to a Netlify site.
-- The Streamlit app is only a local viewer wrapper and is not required for the Netlify deployment.
+### 6. Deploy to Netlify
+
+- `Branch to deploy`: `main`
+- `Base directory`: leave blank
+- `Build command`: leave blank
+- `Publish directory`: `html/assets`
+
+Deploy the contents of the `html/assets` folder. The Streamlit app is only a local preview wrapper and is not required for Netlify.
+
+> Live demo: https://earnest-treacle-7291ba.netlify.app/
 
 ## How it works (high level)
 
