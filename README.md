@@ -97,35 +97,7 @@ python analysis.py  # if adapted, otherwise use main.py flow
 
 `app.py` is a small wrapper that reads `html/assets/case_study.html` and renders it with `streamlit.components.v1.html()` so the page loads exactly as authored (Chart.js via CDN, embedded data). This is useful for quick demos and Streamlit Cloud deployments.
 
-## CSS animation example (copy into your HTML head or site CSS)
 
-Use this snippet to animate metric cards (pulse + fade-in):
-
-```css
-.metric { display:inline-block; padding:18px 22px; border-radius:12px; background:#0f172a; color:#fff; transform-origin:center; }
-@keyframes pulseUp { 0% { transform: translateY(0) scale(1); opacity: 0; } 50% { transform: translateY(-6px) scale(1.02); opacity: 1; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
-.metric.animated { animation: pulseUp 900ms cubic-bezier(.2,.9,.2,1) both; }
-```
-
-Quick JS to add the class on load:
-
-```html
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.metric').forEach((el, i) => setTimeout(()=>el.classList.add('animated'), i*120));
-  });
-</script>
-```
-
-## Example: embedding the HTML in netlify (the project already includes `app.py`)
-
-```python
-import netlify as st
-from netlify.components.v1 import html as st_html
-html = open('html/assets/case_study.html','r',encoding='utf-8').read()
-st.set_page_config(layout='wide')
-st_html(html, height=1400, scrolling=True)
-```
 
 ## Notes & troubleshooting
 
